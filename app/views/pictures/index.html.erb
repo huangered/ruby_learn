@@ -1,5 +1,11 @@
 <h1>Pictures</h1>
 
-<%= debug(current_user) %>
-
-<%= current_user.email %>
+<div class="row">
+  <% @pictures.each do |picture| %>
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="<%= picture.url %>" alt="...">
+    </a>
+  </div>
+  <% end %>
+</div>

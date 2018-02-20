@@ -1,7 +1,6 @@
 class PicturesController < ApplicationController
   def index
-  	@abc
-  	@abc.to_json
+  	@pictures = Picture.all
   end
 
   def list
