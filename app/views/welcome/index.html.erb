@@ -3,7 +3,14 @@
 
 <h1>Hello, Rails!</h1>
 <%= link_to 'My Blog', controller: 'articles' %>
-
-
+<table class="table">
+<% @users.each do |user| %>
+ <tr>
+   <td><%= user.id %> </td>
+   <td><%= user.email %> </td>
+   <td><%= user.encrypted_password %></td>
+</tr>
+  <% end %>
+</table>
 
   <%= javascript_pack_tag 'hello_vue' %>
