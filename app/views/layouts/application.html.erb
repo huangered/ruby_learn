@@ -23,15 +23,15 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page?(controller:'articles') %>">
+        <li class="<%= 'active' if current_page?(controller:'/articles') %>">
           <a href="/articles">Article 
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li>
-          <a href="#">Link</a>
+        <li class="<%= 'active' if current_page?(controller:'/pictures') %>">
+          <a href="/pictures">Picture</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -53,19 +53,28 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Emails</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <% if current_user != nil %>
+              <%= current_user.email %>
+            <% else %>
+              Anonyous
+            <% end %>
+            <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <% if current_user == nil %>
             <li>
               <%= link_to "Sign in", new_user_session_path, :method => :get %>
             </li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <% else %>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Collections</a></li>
             <li role="separator" class="divider"></li>
             <li>
               <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
             </li>
+            <% end %>
           </ul>
         </li>
       </ul>
