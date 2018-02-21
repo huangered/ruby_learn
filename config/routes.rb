@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'plan/index'
+
   get 'collection/index'
 
   get 'setting/index'
