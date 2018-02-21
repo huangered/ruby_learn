@@ -19,45 +19,45 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Open Sesame</a>
+      <a class="navbar-brand" href="#">芝麻开门</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(controller:'/articles') %>">
-          <a href="/articles">Article 
+          <a href="/articles">文章 
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="<%= 'active' if current_page?(controller:'/pictures') %>">
-          <a href="/pictures">Picture</a>
+          <a href="/pictures">图片</a>
         </li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="/mails/index">Emails <span class="badge">42</span></a>
+          <a href="/mails/index">通知 <span class="badge">42</span></a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <% if current_user != nil %>
               <%= current_user.email %>
             <% else %>
-              Anonyous
+              匿名用户
             <% end %>
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if current_user == nil %>
             <li>
-              <%= link_to "Sign in", new_user_session_path, :method => :get %>
+              <%= link_to "登入", new_user_session_path, :method => :get %>
             </li>
             <% else %>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Collections</a></li>
+            <li><a href="#">设置</a></li>
+            <li><a href="#">收藏</a></li>
             <li role="separator" class="divider"></li>
             <li>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <%= link_to "登出", destroy_user_session_path, :method => :delete %>
             </li>
             <% end %>
           </ul>
