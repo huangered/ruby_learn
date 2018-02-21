@@ -53,8 +53,8 @@
               <%= link_to "登入", new_user_session_path, :method => :get %>
             </li>
             <% else %>
-            <li><a href="#">设置</a></li>
-            <li><a href="#">收藏</a></li>
+            <li><a href="/setting/index">设置</a></li>
+            <li><a href="/collection/index">收藏</a></li>
             <li role="separator" class="divider"></li>
             <li>
               <%= link_to "登出", destroy_user_session_path, :method => :delete %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'collection/index'
+
+  get 'setting/index'
+
   get 'mails/index'
   put 'mails/mark_read' => 'mails#markRead'
 
