@@ -66,22 +66,22 @@
 </nav>
 <% if alert != nil %>
 <div class="container">
-  <row>
-	<p class="notice">
-	  <%= notice %>
-	</p>
-	<p class="alert">
-	  <%= alert %>
-	</p>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-4 col-md-offset-4">
+	   <p class="notice">
+	     <%= notice %>
+	   </p>
+	   <p class="alert">
+	     <%= alert %>
+	   </p>
+   </div>
+ </div>
 </div>
+  <% end %>
+
   	<div id="main-container" class="container">
-      <div class="row">
-        <div id="content" class="col-xs-12">
-          <!--  main content -->
-          <%= yield %>
-        </div>
-      </div>
+      <%= yield %>
+      
     </div>
   </body>
 </html>
